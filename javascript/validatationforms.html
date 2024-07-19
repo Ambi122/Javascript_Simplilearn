@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validaton Form</title>
+    <script type="'text/javascript">
+        function validate(){
+            if(document.myForm.EMail.value==""){
+                alert("please provide your Email Id");
+                document.myForm.EMail.focus()
+            } else if (document.myForm.Password.value==""){
+                alert("please provide your password ");
+                document.myForm.EMail.focus()
+            }
+            else{}
+        }
+    </script>
+</head>
+<body>
+   <form action="message.html" name="myform" onsubmit="validate()">
+      <input name="EMail" placeholder="Email" text="text"><br>
+      <input name="password" placeholder="Password" type="text"><br>
+      <button type="submit">submit</button>
+   </form> 
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <h1>Objects</h1>
+    <p id="demo"></p>
+
+    <button id="click me">Click me</button>
+<script>
+// 3 different ways of creating a js objects  (all have same output)
+
+    //use object literal to create and define a javascript object.    {name:value}
+    var stu={
+        name:"sobi",
+        age:21,
+        study:"cs",
+    };
+    document.getElementById("demo").innerHTML=stu.name+" of the age "+stu.age+" study "+stu.study;
+
+    //use the keyword new to create and define a js object.    var obj_name=new object();
+    var stu=new Object();
+    stu.name="sobi";
+    stu.age=21;
+    stu.study="cs";
+    document.getElementById("demo").innerHTML=stu.name+" of the age "+stu.age+" study "+stu.study;
+
+    //use an object constructor to create and define a js object.
+    function stud(name,age,study){
+        this.name=name;
+        this.age=age;
+        this.study=study;
+    }
+    var stu=stud("sobi",21,"cs");
+    document.getElementById("demo").innerHTML=stu.name+" of the age "+stu.age+" study "+stu.study;
+
+</script>
+
+
+<script>
+//Object properties
+
+  //first 
+  var stu={
+        name:"sobi",
+        age:21,
+        study:"cs",
+    };
+    stu.age=22
+    document.getElementById("demo").innerHTML=stu.name+" of the age "+stu.age+" study "+stu.study;
+
+    //second
+    var stu={
+        name:"sobi",
+        age:21,
+        study:"cs",
+    };
+    x=stu.age=23
+    document.getElementById("demo").innerHTML=stu.name+" of the age "+x+" study "+stu.study;
+
+    //third
+    var stu={
+        name:"sobi",
+        age:21,
+        study:"cs",
+    };
+    x="age"
+    document.getElementById("demo").innerHTML=stu.name+" of the age "+stu[x]+" study "+stu.study;
+     
+</script>
+
+<script>
+//Object Methods
+
+    //
+    let user={
+        name:"sobi",
+        age:24,
+    };
+    function sayHi(){
+        alert("Hello");
+    }
+    user.message=sayHi;
+    document.getElementById("demo").innerHTML="Hi" + user.name;
+    document.getElementById("click me").onClick=user.message;
+
+</script>
+
+<script>
+//Object Accessors
+   //
+   var car={
+    model:"BMW 320d",
+    color:"black",
+    fuel_type:"Diesel",
+    get fuel(){
+        return this.fuel_type
+    },
+   };
+   document.getElementById("demo").innerHTML=car.fuel;
+</script>
+
+
+
+</body>
+</html>

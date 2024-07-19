@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <h1>Functions</h1>
+    <p id="demo"></p>
+</body>
+
+<script>   //common function
+    function my_function(val){
+        document.getElementById("demo").innerHTML=val*val;
+    }
+    my_function(5)
+</script>
+
+<script>
+    //function expression
+    let x=function(){
+        alert("Hi")
+    }
+    document.getElementById("demo").innerHTML=x();
+</script>
+
+<script>
+    //function contructor
+    var myfunction=new Function("a","b","return a+b");
+    var y=myfunction(2,3);
+    document.getElementById("demo").innerHTML=y;
+</script>
+
+<script>
+    //self invoking function
+    (function(){
+        alert("Hello")
+    })()
+</script>
+
+<script>
+    //function as value
+    function product(a,b){
+        return a*b
+    }
+    let z=product(2,5)
+    document.getElementById("demo").innerHTML=z
+</script>
+
+<script>
+    //function as object
+    var body="return math.PI*rad"
+    var circle=new Function("rad",body);
+    alert(circle(5))
+</script>
+
+<script>
+    //arrow function
+    const myfunc=(a,b,c)=>{return a*b*c}
+    let product=myfunc(2,3,4)
+    document.getElementById("demo").innerHTML=product
+</script>
+
+<script>
+    //generator function
+    function * generatefunc(){
+        yield 1;
+        yield 2;
+        return 3;
+    }
+    let generator=generatefunc();
+    let one=generator.next();
+    alert(JSON.stringify(one));
+</script>
+
+<script>
+    //predefined function  [types : eval,parselet,parsefloat,escape,unescape]
+
+    //eval [def: evaluate a string and return a value]
+    let a=5;
+    let b=6;
+    let c=7;
+    console.log(eval("x+y"));
+    console.log(eval(c))
+
+    //parselnet : its return an integer of the specified radix or base
+    //paesefloat : parses a string argument and returns a floating-point number
+    //escape : return the hexadecimal encoding of an argument
+    //unescape : return ASCII string for the specified value
+
+</script>
+</html>

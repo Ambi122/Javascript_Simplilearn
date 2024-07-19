@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+    <h1>Loops Types</h1>
+</body>
+<script>
+//run single comments code,then only you understood the concept
+
+   //for loop 
+   let x;
+   for(x=0;x<5;x++)
+   //x=0 is a first or counter variable. its keep track of how many times the code has been executed., x<5 is a second or condition code .its keep looping until the condition is met., x++ is a last.counter variable increment usually 1.
+   console.log(x)
+
+   //while loop
+   let y=1
+   while(y<=5)
+   //y is variable. it is the value that will change., =5 is ending condition.maximum value a variable can reach.
+   {
+    console.log(y)
+    y++
+   }
+
+   //do-while loop
+   let z=15;
+   //when the numer is  out of condition its display same number. number is in condition its shows and starts that number to end.
+   do{
+    console.log(z)
+    z++
+   }
+   while(z<10)
+
+   //breaking out of loop
+   let i;
+   for(i=0;i<=10;i++){
+    console.log(i)
+    if(i==5)
+      break
+   }
+
+   //skipping a loop cycle(to skip a particular loop,continue is used)
+   let a;
+   for(a=1;a<=10;a++){
+    if(a==5)
+       continue
+    console.log(a)
+   }
+
+
+
+
+
+</script>
+</html>

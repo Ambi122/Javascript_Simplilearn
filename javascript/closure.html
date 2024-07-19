@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <h1>Functions</h1>
+    <p id="demo"></p>
+</body>
+<script>
+    //global and local variable scope
+    let a=10;
+    function my_func(){
+        let b=20
+        document.write(a+b)
+    }
+    my_func()
+</script>
+
+<script>
+    //closure
+    var r=10
+    function first_func(){
+        var s=20;
+        function sec_func(){
+            var t=r+s
+            return t
+        }
+        return sec_func();
+    }
+    var sum=first_func()
+    document.write("the sum is"+ sum+'<br>')
+</script>
+</html>

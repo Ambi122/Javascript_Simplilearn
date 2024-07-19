@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async-await</title>
+</head>
+<body>
+    <h1>async-await</h1>
+    <p id="demo"></p>
+</body>
+<script>
+    let result=function(score){
+        return new Promise(function(resolve,reject)
+        {
+            console.log("calculation results")
+            if (score>50)
+            resolve("congratulation!")
+            else
+            reject("failed")
+        })
+    }
+    let grade=function(response){
+        return new Promise(function(resolve,reject)
+    {
+        console.log("calculate your grade")
+        resolve("your grade" +response)
+    })
+    }
+    result(80).then(response=>{
+        console.log("result received")
+        return grade(response)
+    }).then(finalgrade=>{
+        console.log(finalgrade)
+    }).catch(err=>{console.log(err)})
+    async function calculateresults(){
+        try{
+            const response=await result(0)
+            console.log("result received")
+            const finalgrade=await grade(response)
+            console.log(finalgrade)
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+    calculateresults()
+</script>
+</html>

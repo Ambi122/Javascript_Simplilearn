@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <p id="demo"></p>
+</body>
+<script>
+//run single comments code,then only you understood the concept
+
+  // WELCOME ARRAYS OPERATIONS
+
+    //create an array
+    let cars=["BMW","VOLVO","HONDA"];
+    document.getElementById("demo").innerHTML=cars;
+
+    //access an array item
+    let bmw=cars[0];
+    document.getElementById("demo").innerHTML=bmw;
+
+    //array length property
+    let len=cars.length;
+    document.getElementById("demo").innerHTML=len;
+
+    //access  last array item
+    let last=cars[cars.length -1];
+    document.getElementById("demo").innerHTML=last;
+
+    //loop over an array item
+    cars.forEach((item,index,array)=>{console.log(item,index);});
+
+
+
+  //WELCOME ARRAYS METHODS
+
+    //toString(): convert an array into string
+    document.getElementById("demo").innerHTML=cars.toString();
+
+    //pop(): remove the last element from an array
+    let last1=cars.pop();
+    document.getElementById("demo").innerHTML=last1;
+    let last2=cars[cars.length -1];
+    console.log(last2);
+
+    //push(): add a new element at the end of an array
+    cars.push("audi");
+    document.getElementById("demo").innerHTML=cars;
+
+    //shift():remove the first element from an array
+    cars.shift();
+    document.getElementById("demo").innerHTML=cars;
+
+    //unshift(): add an element at the begining of an array
+    cars.unshift("hyundai");
+    document.getElementById("demo").innerHTML=cars;
+
+    //concat():create a new array by merging existing arrays
+    let bikes=["yamaha","suzuki","royal enfield"];
+    let vechicles=cars.concat(bikes);
+    document.getElementById("demo").innerHTML=vechicles;
+
+    //sort():sort an array in ascending order
+    vechicles.sort();
+    document.getElementById("demo").innerHTML=vechicles;
+
+    //reverse(): reverse the elements of an array
+    vechicles.reverse();
+    document.getElementById("demo").innerHTML=vechicles;
+
+    
+
+  //MAP, REDUCE AND FILTER
+
+    //array.map(): its create a new array and performs a function on each array element
+    let num1=[2,3,4,5,6,7];
+    let num2=num1.map(multiply);
+    function multiply(value){
+        return value*2;
+    }
+    document.getElementById("demo").innerHTML=num2;
+
+    //array.filter(): its takes each element in an array and it applies a conditional statement against it.
+    let num3=num1.filter(comp);
+    function comp(value){
+        return value>4;
+    }
+    document.getElementById("demo").innerHTML=num3;
+
+    //array.reduce(): its reduce an array of values down to just one value using a function
+    let num4=num1.reduce(sum);
+    function sum(total,value){
+        return total+value;
+    }
+    document.getElementById("demo").innerHTML=num4;
+
+</script>
+</html>
